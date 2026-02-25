@@ -14,7 +14,7 @@
 ---
 
 ## 2. Project Title and Motivation
-**Predictive Analysis of Employee Attrition**
+###**Predictive Analysis of Employee Attrition**
 
 Employee attrition represents a critical challenge for organizations, as companies often struggle to identify the specific factors that lead employees to leave. With a large workforce, the challenge lies in using employee data to uncover hidden patterns that indicate whether an employee is likely to leave the company. 
 
