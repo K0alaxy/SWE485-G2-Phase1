@@ -1,10 +1,7 @@
 # SWE485 Project: Employee Attrition Prediction System
 
 ## 1. Group Information
-
-### Group Number
-Group 2
-
+### Group 2
 ### Members
 - Lana – 444200666
 - Najla - 444200597
@@ -13,6 +10,7 @@ Group 2
 - Fatema Makled - 444200114
 - Nouf - 444200408
 - Nada - 444200546
+
 ---
 
 ## 2. Project Title and Motivation
