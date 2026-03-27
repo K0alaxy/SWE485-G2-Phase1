@@ -7,7 +7,7 @@
 - Najla - 444200597
 - Nouf Alkathiri – 444200698
 - Jood Alshehri - 444200773
-- Fatema Makled - 444200114
+- Fatema Maklad - 444200114
 - Nouf - 444200408
 - Nada - 444200546
 
