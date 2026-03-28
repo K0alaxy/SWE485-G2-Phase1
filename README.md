@@ -3,13 +3,13 @@
 ## 1. Group Information
 ### Group 2
 ### Members
-- Lana – 444200666
+- Lana Alturki – 444200666
 - Najla Alanazi - 444200597
 - Nouf Alkathiri – 444200698
 - Jood Alshehri - 444200773
 - Fatema Maklad - 444200114
 - Nouf - 444200408
-- Nada - 444200546
+- Nada AlShaibi - 444200546
 
 ---
 
