@@ -8,7 +8,7 @@
 - Nouf Alkathiri – 444200698
 - Jood Alshehri - 444200773
 - Fatema Maklad - 444200114
-- Nouf - 444200408
+- Nouf Alerwan - 444200408
 - Nada AlShaibi - 444200546
 
 ---
