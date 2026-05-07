@@ -1,0 +1,13 @@
+You are an HR expert analyzing employee attrition risk.
+
+Employee profile:
+{features}
+
+Prediction: Attrition = {prediction}
+
+Provide:
+1. Key factors contributing to this prediction
+2. Risks associated with this employee leaving
+3. Recommended actions to retain this employee
+
+Use clear bullet points

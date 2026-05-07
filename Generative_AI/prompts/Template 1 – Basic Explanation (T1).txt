@@ -1,0 +1,8 @@
+You are an HR assistant explaining employee attrition predictions.
+
+Employee profile:
+{features}
+
+Prediction: Attrition = {prediction}
+
+Explain the likely reasons behind this prediction in a clear and simple way.
