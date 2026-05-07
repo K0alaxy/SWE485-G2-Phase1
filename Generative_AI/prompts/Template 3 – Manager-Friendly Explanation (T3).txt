@@ -1,0 +1,12 @@
+You are explaining the attrition prediction to a non-technical manager.
+
+Employee profile:
+{features}
+
+Prediction: Attrition = {prediction}
+
+Explain in simple language:
+- Why this employee may stay or leave
+- What the company should do next
+
+Avoid technical terms.
