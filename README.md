@@ -18,7 +18,7 @@
 ### Phase 1
 | Member | Responsibilities |
 |--------|-----------------|
-| **Joud** | Data preprocessing & feature engineering (outlier handling, BusinessTravel encoding, age discretization, satisfaction features), final dataset validation/export, insights & challenges |
+| **Jood** | Data preprocessing & feature engineering (outlier handling, BusinessTravel encoding, age discretization, satisfaction features), final dataset validation/export, insights & challenges |
 | **Nada** | Data preprocessing (cleaning, target encoding, one-hot encoding, scaling), dataset preparation for modeling |
 | **Fatema** | XGBoost model, evaluation, misclassification analysis |
 | **Nouf AlKathiri** | Logistic Regression model, model selection & justification |
