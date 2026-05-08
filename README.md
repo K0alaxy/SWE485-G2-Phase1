@@ -29,12 +29,12 @@
 ### Phase 2
 | Member | Responsibilities |
 |--------|-----------------|
-| **Joud** | K-means Clustering algorithm |
+| **Joud** | K-means Clustering algorithm implementation |
 | **Nada** | Quantitative analysis, prompt selection, ethics section |
 | **Fatema** | Integration & Documentation Lead |
-| **Nouf AlKathiri** | DBSCAN algorithm, clustering tendency, implementation, tuning, fixes |
+| **Nouf AlKathiri** | DBSCAN algorithm implementation|
 | **Najla** |Generative AI API setup and implementation |
-| **Lana** | Hierarchical Clustering algorithm|
+| **Lana** | Hierarchical Clustering algorithm implementation|
 | **Nouf AlErewan** | Prompt templates, Testing, quantitative analysis |
 
 ---
