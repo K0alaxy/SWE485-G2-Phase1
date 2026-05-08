@@ -18,7 +18,7 @@
 ### Phase 1
 | Member | Responsibilities |
 |--------|-----------------|
-| **Joud** | Data preprocessing & feature engineering (outlier handling, BusinessTravel encoding, age discretization, satisfaction features), final dataset validation/export, insights & challenges |
+| **Jood** | Data preprocessing & feature engineering (outlier handling, BusinessTravel encoding, age discretization, satisfaction features), final dataset validation/export, insights & challenges |
 | **Nada** | Data preprocessing (cleaning, target encoding, one-hot encoding, scaling), dataset preparation for modeling |
 | **Fatema** | XGBoost model, evaluation, misclassification analysis |
 | **Nouf AlKathiri** | Logistic Regression model, model selection & justification |
@@ -29,7 +29,7 @@
 ### Phase 2
 | Member | Responsibilities |
 |--------|-----------------|
-| **Joud** | K-means Clustering algorithm implementation |
+| **Jood** | K-means Clustering algorithm implementation |
 | **Nada** | Quantitative analysis, prompt selection, ethics section |
 | **Fatema** | Integration & Documentation Lead |
 | **Nouf AlKathiri** | DBSCAN algorithm implementation|
