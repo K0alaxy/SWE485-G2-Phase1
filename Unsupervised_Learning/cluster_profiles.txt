@@ -12,21 +12,6 @@ Overall Attrition  : 16.1%
 1. K-MEANS CLUSTERING (k=9)
 ================================================================================
 
-K-means identified 9 clusters across 1,470 employees. The clustering reflects the
-dataset's natural structure — employees do not form sharply separated groups, which
-is consistent with the weak Hopkins Statistic (0.33) and the 84%/16% class imbalance
-in the original dataset.
-
-Evaluation Metrics:
-  Silhouette Score     : 0.1220  — Fair, some overlap between clusters exists
-                                    but employees are generally closer to their
-                                    own cluster than others.
-  Davies-Bouldin Index : 2.3071  — Clusters are not well-separated, expected
-                                    given the continuous nature of HR profiles.
-  WCSS (Inertia)       : 50,992.70 — Consistent with the gradual elbow curve,
-                                    confirming data does not compress tightly
-                                    around any set of centroids.
-
 --------------------------------------------------------------------------------
 Cluster 0: Average-Risk Core Employees (325 employees, 22.1%)
 --------------------------------------------------------------------------------
@@ -107,37 +92,10 @@ Cluster 8: Large At-Risk Low-Earners (292 employees, 19.9%)
   Risk      : AVERAGE-HIGH — Second largest cluster. Low income relative to
               age warrants monitoring.
 
---------------------------------------------------------------------------------
-Summary
---------------------------------------------------------------------------------
-  Findings:
-  - Cluster 3: 39.8% attrition — more than double the average — CRITICAL
-  - Cluster 1: 23.9% attrition — large group of young low-earners — HIGH RISK
-  - Cluster 5: 23.1% attrition — small but elevated — needs monitoring
-  - Clusters 6 & 2: near-perfect retention — senior, experienced employees
-  - Cluster 8: second largest (19.9%) — average-to-high risk due to low pay
-
-  Key Actions Needed:
-  1. URGENT  : Investigate Cluster 3 — youngest, lowest-paid employees leaving
-  2. URGENT  : Review Cluster 1 — large group of young low-earners
-  3. PROTECT : Clusters 6 & 2 — maintain compensation and conditions
-  4. MONITOR : Clusters 5 & 8 — borderline attrition driven by low compensation
-  5. MAINTAIN: Clusters 4 & 7 — stable mid-career groups, invest in growth
-
 
 ================================================================================
 2. DBSCAN CLUSTERING (eps=6.4, min_samples=5)
 ================================================================================
-
-DBSCAN identified 3 clusters plus noise/outliers across 1,470 employees. The
-clustering reflects the dataset's natural structure — the majority of employees
-share similar feature profiles, which is consistent with the 84%/16% class
-imbalance present in the original dataset.
-
-Evaluation Metrics:
-  Silhouette Score     : 0.1319  — Fair, some cluster overlap exists
-  Davies-Bouldin Index : 1.6778  — Fair cluster separation
-  WCSS                 : 54,802.46
 
 --------------------------------------------------------------------------------
 Cluster 0: The Typical Workforce (1,208 employees, 82.2%)
@@ -145,8 +103,8 @@ Cluster 0: The Typical Workforce (1,208 employees, 82.2%)
   Attrition : 16.7% (matches company average)
   Profile   : Average age 35.8, 6.2 years at company, $5,478 monthly income,
               moderate satisfaction
-  Risk      : AVERAGE — This is the core workforce. No single retention strategy
-              fits all, but maintaining engagement and career growth is key.
+  Risk      : AVERAGE — This is the core workforce. Maintaining engagement and
+              career growth opportunities is key.
 
 --------------------------------------------------------------------------------
 Cluster 1: Senior High-Earners (59 employees, 4.0%)
@@ -173,34 +131,13 @@ Noise/Outliers (185 employees, 12.6%)
   Attrition : 16.2% (matches company average)
   Profile   : Older employees (avg 42), long tenure (11.5 years), high income
               ($10,327) — atypical profiles that do not fit any cluster
-  Risk      : MODERATE — Their mixed characteristics suggest individualized HR
-              attention is needed rather than a group strategy.
-
---------------------------------------------------------------------------------
-Summary
---------------------------------------------------------------------------------
-  Findings:
-  - Cluster 2: 27.8% attrition — nearly double the average — CRITICAL
-  - Cluster 1: 0.0% attrition — senior high-earners never leave
-  - Cluster 0: 82.2% of employees — stable but needs engagement
-  - Noise    : 12.6% outliers — no single strategy fits them
-
-  Key Actions Needed:
-  1. URGENT      : Investigate Cluster 2 — young, lowest-paid employees leaving
-  2. PROTECT     : Cluster 1 — perfect retention, maintain their compensation
-  3. MAINTAIN    : Cluster 0 — core workforce, invest in growth and satisfaction
-  4. INDIVIDUALIZE: Noise employees need personalized HR attention
+  Risk      : MODERATE — Mixed characteristics suggest individualized HR
+              attention rather than a group strategy.
 
 
 ================================================================================
 3. AGGLOMERATIVE HIERARCHICAL CLUSTERING (Ward linkage, k=9)
 ================================================================================
-
-Hierarchical Clustering (Ward linkage) identified 9 clusters across 1,470
-employees. The main differences between clusters are related to career progression
-factors (Age, MonthlyIncome, JobLevel, TotalWorkingYears). Satisfaction scores
-were nearly identical across clusters and did not separate the groups.
-
 Note: Job level scale — 1=Entry, 2=Junior, 3=Mid, 4=Senior/Manager, 5=Director
 
 --------------------------------------------------------------------------------
@@ -282,23 +219,6 @@ Cluster 8: Stable Mid-Senior (136 employees, 9.3%)
               ($7,266), job level (2.45) with 12.9 years of experience
   Risk      : LOW — Standard engagement and recognition investment is
               sufficient to maintain retention.
-
---------------------------------------------------------------------------------
-Summary
---------------------------------------------------------------------------------
-  Findings:
-  - Cluster 5: 39.8% attrition — highest in dataset — CRITICAL
-  - Cluster 1: 20.7% attrition — experience-job level mismatch — ELEVATED
-  - Cluster 0: 19.8% attrition — largest group, high volume impact — ELEVATED
-  - Clusters 4 & 6: near-perfect retention — senior, high-earning employees
-  - Clusters 3 & 8: low attrition — stable mid-senior employees
-
-  Key Actions Needed:
-  1. URGENT  : Investigate Cluster 5 — youngest, lowest-paid, highest attrition
-  2. URGENT  : Address Cluster 1 — promote employees whose level lags experience
-  3. URGENT  : Engage Cluster 0 — largest group with above-average attrition
-  4. PROTECT : Clusters 4 & 6 — maintain compensation for senior high-earners
-  5. MAINTAIN: Clusters 3 & 8 — stable segments, standard engagement sufficient
 
 
 ================================================================================
