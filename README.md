@@ -29,7 +29,7 @@
 ### Phase 2
 | Member | Responsibilities |
 |--------|-----------------|
-| **Joud** | K-means Clustering algorithm implementation |
+| **Jood** | K-means Clustering algorithm implementation |
 | **Nada** | Quantitative analysis, prompt selection, ethics section |
 | **Fatema** | Integration & Documentation Lead |
 | **Nouf AlKathiri** | DBSCAN algorithm implementation|
