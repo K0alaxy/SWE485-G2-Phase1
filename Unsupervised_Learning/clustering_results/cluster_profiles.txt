@@ -1,0 +1,306 @@
+================================================================================
+CLUSTER PROFILES — IBM HR EMPLOYEE ATTRITION DATASET
+Phase 2: Unsupervised Learning
+================================================================================
+Dataset            : IBM HR Employee Attrition (1,470 employees, 50 features)
+Algorithms Applied : K-means | DBSCAN | Agglomerative Hierarchical Clustering
+Overall Attrition  : 16.1%
+================================================================================
+
+
+================================================================================
+1. K-MEANS CLUSTERING (k=9)
+================================================================================
+
+K-means identified 9 clusters across 1,470 employees. The clustering reflects the
+dataset's natural structure — employees do not form sharply separated groups, which
+is consistent with the weak Hopkins Statistic (0.33) and the 84%/16% class imbalance
+in the original dataset.
+
+Evaluation Metrics:
+  Silhouette Score     : 0.1220  — Fair, some overlap between clusters exists
+                                    but employees are generally closer to their
+                                    own cluster than others.
+  Davies-Bouldin Index : 2.3071  — Clusters are not well-separated, expected
+                                    given the continuous nature of HR profiles.
+  WCSS (Inertia)       : 50,992.70 — Consistent with the gradual elbow curve,
+                                    confirming data does not compress tightly
+                                    around any set of centroids.
+
+--------------------------------------------------------------------------------
+Cluster 0: Average-Risk Core Employees (325 employees, 22.1%)
+--------------------------------------------------------------------------------
+  Attrition : 17.5% (matches company average)
+  Profile   : Average age (36.8), moderate tenure (7.4 years), moderate income
+              ($6,903), moderate satisfaction
+  Risk      : AVERAGE — The largest cluster. No urgent action but career
+              development programs are key.
+
+--------------------------------------------------------------------------------
+Cluster 1: High-Risk Junior Low-Earners (259 employees, 17.6%)
+--------------------------------------------------------------------------------
+  Attrition : 23.9% (above company average — HIGH RISK)
+  Profile   : Young employees (avg 34), short tenure (5 years), low income
+              ($3,237), moderate satisfaction
+  Risk      : HIGH — Young, underpaid employees leaving at elevated rates.
+              Compensation review needed.
+
+--------------------------------------------------------------------------------
+Cluster 2: Near-Perfect Retention Seniors (80 employees, 5.4%)
+--------------------------------------------------------------------------------
+  Attrition : 2.5% (lowest in the dataset)
+  Profile   : Older employees (avg 44), long tenure (10.9 years), high income
+              ($16,034), moderate satisfaction
+  Risk      : NONE — Extremely stable group. Maintain current conditions.
+
+--------------------------------------------------------------------------------
+Cluster 3: Critical High-Risk Young Employees (83 employees, 5.6%)
+--------------------------------------------------------------------------------
+  Attrition : 39.8% (more than double the company average — CRITICAL)
+  Profile   : Youngest group (avg 30), shortest tenure (2.9 years), lowest
+              income ($2,626), moderate satisfaction
+  Risk      : CRITICAL — The highest attrition cluster. Extremely low pay and
+              minimal tenure strongly suggest early-career dissatisfaction.
+
+--------------------------------------------------------------------------------
+Cluster 4: Stable Mid-Career Employees (131 employees, 8.9%)
+--------------------------------------------------------------------------------
+  Attrition : 6.9% (well below company average)
+  Profile   : Average age (39.8), moderate tenure (8.4 years), moderate income
+              ($7,529), moderate satisfaction
+  Risk      : LOW — Well-retained mid-career group. Continued investment in
+              growth will maintain stability.
+
+--------------------------------------------------------------------------------
+Cluster 5: Elevated-Risk Employees (52 employees, 3.5%)
+--------------------------------------------------------------------------------
+  Attrition : 23.1% (above company average)
+  Profile   : Average age (35.5), moderate tenure (5.3 years), below-average
+              income ($4,236), moderate satisfaction
+  Risk      : MODERATE-HIGH — Small group with noticeably above-average
+              attrition. Income gap may be the driver.
+
+--------------------------------------------------------------------------------
+Cluster 6: Highly Retained Senior High-Earners (103 employees, 7.0%)
+--------------------------------------------------------------------------------
+  Attrition : 4.9% (well below company average)
+  Profile   : Oldest group (avg 47), longest tenure (14.6 years), highest
+              income ($17,150), moderate satisfaction
+  Risk      : NONE — The most experienced and highest-paid group. Protect
+              compensation and recognition.
+
+--------------------------------------------------------------------------------
+Cluster 7: Low-Risk Mid-Earners (145 employees, 9.9%)
+--------------------------------------------------------------------------------
+  Attrition : 6.9% (well below company average)
+  Profile   : Average age (38.3), moderate tenure (7.6 years), moderate income
+              ($7,295), moderate satisfaction
+  Risk      : LOW — Stable group with healthy retention. Invest in career
+              progression.
+
+--------------------------------------------------------------------------------
+Cluster 8: Large At-Risk Low-Earners (292 employees, 19.9%)
+--------------------------------------------------------------------------------
+  Attrition : 16.1% (matches company average)
+  Profile   : Young employees (avg 34.2), short tenure (5.1 years), low income
+              ($3,240), moderate satisfaction
+  Risk      : AVERAGE-HIGH — Second largest cluster. Low income relative to
+              age warrants monitoring.
+
+--------------------------------------------------------------------------------
+Summary
+--------------------------------------------------------------------------------
+  Findings:
+  - Cluster 3: 39.8% attrition — more than double the average — CRITICAL
+  - Cluster 1: 23.9% attrition — large group of young low-earners — HIGH RISK
+  - Cluster 5: 23.1% attrition — small but elevated — needs monitoring
+  - Clusters 6 & 2: near-perfect retention — senior, experienced employees
+  - Cluster 8: second largest (19.9%) — average-to-high risk due to low pay
+
+  Key Actions Needed:
+  1. URGENT  : Investigate Cluster 3 — youngest, lowest-paid employees leaving
+  2. URGENT  : Review Cluster 1 — large group of young low-earners
+  3. PROTECT : Clusters 6 & 2 — maintain compensation and conditions
+  4. MONITOR : Clusters 5 & 8 — borderline attrition driven by low compensation
+  5. MAINTAIN: Clusters 4 & 7 — stable mid-career groups, invest in growth
+
+
+================================================================================
+2. DBSCAN CLUSTERING (eps=6.4, min_samples=5)
+================================================================================
+
+DBSCAN identified 3 clusters plus noise/outliers across 1,470 employees. The
+clustering reflects the dataset's natural structure — the majority of employees
+share similar feature profiles, which is consistent with the 84%/16% class
+imbalance present in the original dataset.
+
+Evaluation Metrics:
+  Silhouette Score     : 0.1319  — Fair, some cluster overlap exists
+  Davies-Bouldin Index : 1.6778  — Fair cluster separation
+  WCSS                 : 54,802.46
+
+--------------------------------------------------------------------------------
+Cluster 0: The Typical Workforce (1,208 employees, 82.2%)
+--------------------------------------------------------------------------------
+  Attrition : 16.7% (matches company average)
+  Profile   : Average age 35.8, 6.2 years at company, $5,478 monthly income,
+              moderate satisfaction
+  Risk      : AVERAGE — This is the core workforce. No single retention strategy
+              fits all, but maintaining engagement and career growth is key.
+
+--------------------------------------------------------------------------------
+Cluster 1: Senior High-Earners (59 employees, 4.0%)
+--------------------------------------------------------------------------------
+  Attrition : 0.0% (perfect retention)
+  Profile   : Older employees (avg 44), long tenure (10.2 years), highest
+              income ($16,298), moderate satisfaction
+  Risk      : NONE — Well-compensated experienced employees who are not leaving.
+              Protect their compensation and recognition.
+
+--------------------------------------------------------------------------------
+Cluster 2: Junior Low-Earners (18 employees, 1.2%)
+--------------------------------------------------------------------------------
+  Attrition : 27.8% (nearly double the company average — CRITICAL)
+  Profile   : Youngest group (avg 34), shortest tenure (4.8 years), lowest
+              income ($3,872), lowest satisfaction
+  Risk      : CRITICAL — Despite being a small group, their attrition rate is
+              alarming. Low pay and short tenure suggest early-career
+              dissatisfaction.
+
+--------------------------------------------------------------------------------
+Noise/Outliers (185 employees, 12.6%)
+--------------------------------------------------------------------------------
+  Attrition : 16.2% (matches company average)
+  Profile   : Older employees (avg 42), long tenure (11.5 years), high income
+              ($10,327) — atypical profiles that do not fit any cluster
+  Risk      : MODERATE — Their mixed characteristics suggest individualized HR
+              attention is needed rather than a group strategy.
+
+--------------------------------------------------------------------------------
+Summary
+--------------------------------------------------------------------------------
+  Findings:
+  - Cluster 2: 27.8% attrition — nearly double the average — CRITICAL
+  - Cluster 1: 0.0% attrition — senior high-earners never leave
+  - Cluster 0: 82.2% of employees — stable but needs engagement
+  - Noise    : 12.6% outliers — no single strategy fits them
+
+  Key Actions Needed:
+  1. URGENT      : Investigate Cluster 2 — young, lowest-paid employees leaving
+  2. PROTECT     : Cluster 1 — perfect retention, maintain their compensation
+  3. MAINTAIN    : Cluster 0 — core workforce, invest in growth and satisfaction
+  4. INDIVIDUALIZE: Noise employees need personalized HR attention
+
+
+================================================================================
+3. AGGLOMERATIVE HIERARCHICAL CLUSTERING (Ward linkage, k=9)
+================================================================================
+
+Hierarchical Clustering (Ward linkage) identified 9 clusters across 1,470
+employees. The main differences between clusters are related to career progression
+factors (Age, MonthlyIncome, JobLevel, TotalWorkingYears). Satisfaction scores
+were nearly identical across clusters and did not separate the groups.
+
+Note: Job level scale — 1=Entry, 2=Junior, 3=Mid, 4=Senior/Manager, 5=Director
+
+--------------------------------------------------------------------------------
+Cluster 0: Junior Core Workforce (514 employees, 35.0%)
+--------------------------------------------------------------------------------
+  Attrition : 19.8% (above company average)
+  Profile   : Below average age (34), short tenure (5.1 years), low income
+              ($3,245), low job level (1.22)
+  Risk      : ELEVATED — The largest group in the dataset. A small attrition
+              reduction here saves dozens of employees annually.
+
+--------------------------------------------------------------------------------
+Cluster 1: Mid Level Transitional (58 employees, 3.9%)
+--------------------------------------------------------------------------------
+  Attrition : 20.7% (above company average)
+  Profile   : Average age 37, moderate tenure (6.2 years), income ($5,710),
+              job level (1.81) low relative to 10 years of experience
+  Risk      : ELEVATED — Experience is not matched by appropriate job level.
+              Promotions are needed.
+
+--------------------------------------------------------------------------------
+Cluster 2: Core Mid Career Workforce (316 employees, 21.5%)
+--------------------------------------------------------------------------------
+  Attrition : 17.7% (close to company average)
+  Profile   : Average age 37, moderate tenure (7.5 years), income ($6,939),
+              job level (2.33) well-aligned with 11 years of experience
+  Risk      : AVERAGE — A broadly stable group that benefits from general
+              engagement initiatives.
+
+--------------------------------------------------------------------------------
+Cluster 3: Mid Senior Stable (120 employees, 8.2%)
+--------------------------------------------------------------------------------
+  Attrition : 6.7% (well below company average)
+  Profile   : Average age 40, tenure (8.4 years), above average income
+              ($7,542), job level (2.48) with 14.1 years of experience
+  Risk      : LOW — One of the most stable segments. Maintenance level
+              engagement is sufficient.
+
+--------------------------------------------------------------------------------
+Cluster 4: Executive Leadership (92 employees, 6.3%)
+--------------------------------------------------------------------------------
+  Attrition : 5.4% (close to perfect retention)
+  Profile   : Oldest group (avg 47), longest tenure (15.1 years), highest
+              income ($16,993), job level (4.26) with 24.8 years of experience
+  Risk      : NONE — Well compensated and deeply established.
+
+--------------------------------------------------------------------------------
+Cluster 5: Early Career At-Risk (83 employees, 5.6%)
+--------------------------------------------------------------------------------
+  Attrition : 39.8% (highest in the dataset — CRITICAL)
+  Profile   : Youngest group (avg 30), shortest tenure (2.9 years), lowest
+              income ($2,626), lowest job level (1.08)
+  Risk      : CRITICAL — The highest attrition cluster by far. Immediate
+              salary and promotion intervention is required.
+
+--------------------------------------------------------------------------------
+Cluster 6: Senior High-Performers (76 employees, 5.2%)
+--------------------------------------------------------------------------------
+  Attrition : 2.6% (close to perfect retention)
+  Profile   : Older employees (avg 44), long tenure (11.3 years), very high
+              income ($16,108), job level (4.00) with 21.5 years of experience
+  Risk      : NONE — Retained senior employees with deep institutional
+              knowledge.
+
+--------------------------------------------------------------------------------
+Cluster 7: Mid Career Average (75 employees, 5.1%)
+--------------------------------------------------------------------------------
+  Attrition : 12.0% (below company average)
+  Profile   : Average age 36, moderate tenure (6.0 years), income ($6,248),
+              job level (2.01) with 10.3 years of experience
+  Risk      : MODERATE — Periodic monitoring for compensation progression
+              mismatch risk.
+
+--------------------------------------------------------------------------------
+Cluster 8: Stable Mid-Senior (136 employees, 9.3%)
+--------------------------------------------------------------------------------
+  Attrition : 7.4% (below company average)
+  Profile   : Average age 39, solid tenure (7.5 years), above average income
+              ($7,266), job level (2.45) with 12.9 years of experience
+  Risk      : LOW — Standard engagement and recognition investment is
+              sufficient to maintain retention.
+
+--------------------------------------------------------------------------------
+Summary
+--------------------------------------------------------------------------------
+  Findings:
+  - Cluster 5: 39.8% attrition — highest in dataset — CRITICAL
+  - Cluster 1: 20.7% attrition — experience-job level mismatch — ELEVATED
+  - Cluster 0: 19.8% attrition — largest group, high volume impact — ELEVATED
+  - Clusters 4 & 6: near-perfect retention — senior, high-earning employees
+  - Clusters 3 & 8: low attrition — stable mid-senior employees
+
+  Key Actions Needed:
+  1. URGENT  : Investigate Cluster 5 — youngest, lowest-paid, highest attrition
+  2. URGENT  : Address Cluster 1 — promote employees whose level lags experience
+  3. URGENT  : Engage Cluster 0 — largest group with above-average attrition
+  4. PROTECT : Clusters 4 & 6 — maintain compensation for senior high-earners
+  5. MAINTAIN: Clusters 3 & 8 — stable segments, standard engagement sufficient
+
+
+================================================================================
+END OF CLUSTER PROFILES
+================================================================================
