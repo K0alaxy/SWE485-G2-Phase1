@@ -1,0 +1,76 @@
+================================================================================
+CLUSTERING EVALUATION RESULTS — IBM HR EMPLOYEE ATTRITION DATASET
+Phase 2: Unsupervised Learning
+================================================================================
+Dataset            : IBM HR Employee Attrition (1,470 employees, 50 features)
+Algorithms Applied : K-means | DBSCAN | Agglomerative Hierarchical Clustering
+Overall Attrition  : 16.1%
+================================================================================
+
+
+================================================================================
+1. K-MEANS CLUSTERING (k=9)
+================================================================================
+
+  Silhouette Score     : 0.1220
+    → Fair — some cluster overlap exists but employees are generally closer
+      to their own cluster than others.
+
+  Davies-Bouldin Index : 2.3071
+    → Lower is better (clusters are not well-separated)
+
+  WCSS (Inertia)       : 50,992.70
+    → Lower is better (tighter clusters)
+
+
+================================================================================
+2. DBSCAN CLUSTERING (eps=6.4, min_samples=5)
+================================================================================
+
+  Silhouette Score     : 0.1319  (non-noise points only)
+    → Fair — some cluster overlap exists
+
+  Davies-Bouldin Index : 1.6778  (non-noise points only)
+    → Fair — some cluster overlap
+
+  WCSS                 : 54,802.46
+    → Average WCSS per cluster: 18,267.49
+    → Lower WCSS = tighter, more compact clusters
+
+
+================================================================================
+3. AGGLOMERATIVE HIERARCHICAL CLUSTERING (Ward linkage, k=9)
+================================================================================
+
+  Silhouette Score     : 0.1211
+    → Fair — higher is better (max=1)
+
+  Davies-Bouldin Index : 2.2749
+    → Lower is better
+
+  WCSS                 : 52,425.41
+
+
+================================================================================
+COMPARISON SUMMARY
+================================================================================
+
+  Metric                  K-means     DBSCAN      Agglomerative
+  ──────────────────────────────────────────────────────────────
+  Silhouette Score        0.1220      0.1319      0.1211
+  Davies-Bouldin Index    2.3071      1.6778      2.2749
+  WCSS                    50,992.70   54,802.46   52,425.41
+
+  Best Silhouette  → DBSCAN   (0.1319)
+  Best DBI         → DBSCAN   (1.6778)
+  Best WCSS        → K-means  (50,992.70)
+
+  Note: All three algorithms produced fair rather than excellent scores.
+  This is expected given the weak Hopkins Statistic (H=0.3279) which indicated
+  weak natural cluster structure, and the 84%/16% class imbalance in the dataset.
+  Results should be treated as soft groupings that guide HR decisions rather
+  than hard boundaries.
+
+================================================================================
+END OF EVALUATION RESULTS
+================================================================================
